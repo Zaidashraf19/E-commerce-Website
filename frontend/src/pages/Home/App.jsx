@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Base_URL from "../Base_URL.js";
 import axios from "axios";
-import feedbackVideo from "../../videos/feedbackVideo.mp4";
+// import feedbackVideo from "../../videos/feedbackVideo.mp4";
 
 const App = () => {
   const [feedback, setFeedback] = useState([]);
