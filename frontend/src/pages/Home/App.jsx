@@ -7,37 +7,37 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Base_URL from "../Base_URL.js";
 import axios from "axios";
-import feedbackVide from "../../videos/Feedbackvideo.mp4";
+import feedbackVideo from "../../videos/feedbackVideo.mp4";
 
 const App = () => {
   const [feedback, setFeedback] = useState([]);
 
   const feedbackVideos = [
-    {
-      video: feedbackVide,
-      title: "Ahmed Raza",
-      text: "Absolutely love this fragrance! It smells premium and lasts all day.",
-    },
-    {
-      video: feedbackVide,
-      title: "Sarah Khan",
-      text: "The fragrance is elegant and refreshing. Highly recommended!",
-    },
-    {
-      video: feedbackVide,
-      title: "Hamza Ali",
-      text: "Amazing quality and beautiful packaging. Definitely buying again.",
-    },
-    {
-      video: feedbackVide,
-      title: "Ayesha Malik",
-      text: "One of my favorite fragrances. Long-lasting and very classy.",
-    },
-    {
-      video: feedbackVide,
-      title: "Usman Ahmed",
-      text: "The scent is incredible and I received so many compliments.",
-    },
+    // {
+    //   video: feedbackVideo,
+    //   title: "Ahmed Raza",
+    //   text: "Absolutely love this fragrance! It smells premium and lasts all day.",
+    // },
+    // {
+    //   video: feedbackVideo,
+    //   title: "Sarah Khan",
+    //   text: "The fragrance is elegant and refreshing. Highly recommended!",
+    // },
+    // {
+    //   video: feedbackVideo,
+    //   title: "Hamza Ali",
+    //   text: "Amazing quality and beautiful packaging. Definitely buying again.",
+    // },
+    // {
+    //   video: feedbackVideo,
+    //   title: "Ayesha Malik",
+    //   text: "One of my favorite fragrances. Long-lasting and very classy.",
+    // },
+    // {
+    //   video: feedbackVideo,
+    //   title: "Usman Ahmed",
+    //   text: "The scent is incredible and I received so many compliments.",
+    // },
   ];
 
   //CUSTOMER FEEDBACKS
@@ -48,7 +48,7 @@ const App = () => {
         // console.log(res?.data?.data, "FEEDBACK");
         setFeedback(res?.data?.data);
       } catch {
-        // console.error("Error fetching products");
+        console.error("Error fetching products");
       }
     };
     fetchProducts();
@@ -73,11 +73,11 @@ const App = () => {
               OUR BENEFITS
             </p>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide text-[#4a0a0a]">
               WHY CHOOSE US
             </h1>
 
-            <div className="w-16 h-1 bg-[#4a0a0a] mx-auto mt-4 rounded-full"></div>
+            <div className="w-16 h-1 bg-black mx-auto mt-4 rounded-full"></div>
           </div>
 
           {/* Benefits */}
@@ -295,31 +295,32 @@ const App = () => {
               CUSTOMER REVIEWS
             </p>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide text-[#4a0a0a]">
               WHAT OUR CUSTOMERS SAY
             </h1>
 
-            <div className="w-16 h-1 bg-[#4a0a0a] mx-auto mt-4 rounded-full"></div>
+            <div className="w-16 h-1 bg-black mx-auto mt-4 rounded-full"></div>
 
             <div className="flex gap-3 overflow-x-scroll m-2 select-none">
               {feedback?.map((item, i) => (
                 <>
-                  {console.log(item)}
                   <div
                     key={i}
                     className="border rounded-2xl p-3 text-center flex-shrink-0 w-72 md:w-80"
                   >
-                    <p className="font-bold">{item?.perfumeName}</p>
+                    <p className="text-yellow-400 text-2xl mb-3">★★★★★</p>
                     <p className="font-light my-2">{item?.feedback}</p>
                     <div className="flex justify-center">
                       <img
-                        src={item?.perfumeImage}
+                        // src={item?.perfumeImage}
+                        src="https://media.istockphoto.com/id/1158358904/photo/spraying-perfume-on-dark-background-closeup-image.jpg?s=612x612&w=0&k=20&c=FgO1tJIxW_fVH0e7YHb-oMb_iDshELnMR6qXGILQFcU="
                         alt={item?.perfumeName}
                         className="w-32 rounded border"
                       />
                     </div>
-                    <p className="font-bold text-center">{item?.username}</p>
-                    <p className="text-yellow-400 text-2xl mb-3">★★★★★</p>
+                    <p className="font-bold text-center mt-4 underline underline-offset-4">
+                      {item?.userName}
+                    </p>
                   </div>
                 </>
               ))}
@@ -329,7 +330,7 @@ const App = () => {
           <div className="w-full px-4 sm:px-6 lg:px-8 py-10">
             <div className="max-w-6xl mx-auto">
               {/* Heading */}
-              <div className="text-center mb-6">
+              {/* <div className="text-center mb-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#4a0a0a]">
                   EXPERIENCE THE FRAGRANCE
                 </h2>
@@ -338,12 +339,12 @@ const App = () => {
                   Discover the essence of luxury through our signature
                   collection.
                 </p>
-              </div>
+              </div> */}
 
               {/* Video */}
               <div className="w-full px-4 sm:px-6 lg:px-8 py-10">
                 {/* HEADING */}
-                <div className="text-center mb-8">
+                {/* <div className="text-center mb-8">
                   <h2 className="text-3xl md:text-4xl font-bold text-[#4a0a0a]">
                     CUSTOMER FEEDBACK
                   </h2>
@@ -351,11 +352,11 @@ const App = () => {
                   <p className="text-gray-600 mt-2">
                     See what our customers have to say about our fragrances.
                   </p>
-                </div>
+                </div> */}
 
                 {/* VIDEOS */}
                 <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {feedbackVideos.map((item, index) => (
+                  {feedbackVideos?.map((item, index) => (
                     <div
                       key={index}
                       className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-300"
@@ -363,7 +364,7 @@ const App = () => {
                       {/* VIDEO */}
                       <div className="relative">
                         <video
-                          src={item.video}
+                          src={item?.video}
                           className="w-full h-[400px] object-cover"
                           controls
                           muted
@@ -379,7 +380,7 @@ const App = () => {
                         </h3>
 
                         <p className="text-gray-600 mt-2 leading-6">
-                          "{item.text}"
+                          {item.text}
                         </p>
 
                         {/* STARS */}

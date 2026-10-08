@@ -7,7 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import WishlistDialogComponent from "../WishlistDialog/App.jsx";
 import CartDialogComponent from "../CartDialog/App.jsx";
-import Logo from "../../assets/logo.jpg";
+import Logo from "../../assets/logo.png";
 import { useSelector } from "react-redux";
 
 const Navbar = ({ Username, Password }) => {

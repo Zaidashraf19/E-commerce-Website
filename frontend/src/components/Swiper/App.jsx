@@ -1,4 +1,5 @@
 import { Carousel } from "react-responsive-carousel";
+import CoverPic1 from "../../assets/CoverPic1.jfif";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const App = () => {
@@ -7,15 +8,13 @@ const App = () => {
       <div className="my-2">
         <Carousel infiniteLoop={true} interval={3000} autoPlay={true}>
           <div className="h-100">
-            <img
-              src="https://images.unsplash.com/photo-1526779259212-939e64788e3c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
-              alt="PICTURE 1"
-            />
+            <img src={CoverPic1} alt="PICTURE 1" />
           </div>
           <div className="h-100">
             <img
               src="https://static.vecteezy.com/system/resources/thumbnails/054/876/032/small/mirror-image-snow-capped-mountain-peaks-reflected-in-pristine-lake-free-photo.jpg"
               alt="PICTURE 2"
+              className="w-full h-full"
             />
           </div>
           <div className="h-100">
