@@ -4,6 +4,7 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
+import Logo from "../../assets/logo.png";
 
 const Footer = () => {
   return (
@@ -15,9 +16,9 @@ const Footer = () => {
           <div>
             <Link to="/" className="inline-block mb-4">
               <img
-                src="https://img.magnific.com/free-vector/bird-colorful-gradient-design-vector_343694-2506.jpg?semt=ais_hybrid&w=740&q=80"
+                src={Logo}
                 alt="LOGO"
-                className="w-14 h-14 rounded-full object-cover"
+                className="w-14 h-14 rounded-full object-cover shadow shadow-white"
               />
             </Link>
 
