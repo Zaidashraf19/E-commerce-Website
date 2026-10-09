@@ -46,7 +46,7 @@ const DialogComponent = ({ open, onClose }) => {
           </>
         )}
         <DialogActions className="flex justify-around">
-          <Button onClick={onClose}>Continue Shopping</Button>
+          <Button onClick={onClose}>Explore More Products</Button>
           <Button onClick={onClose}>
             <Link to="/wishlist">Go to Wishlist</Link>
           </Button>

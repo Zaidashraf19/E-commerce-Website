@@ -7,7 +7,7 @@ import MusicNoteIcon from "@mui/icons-material/MusicNote";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-white">
+    <footer className="bg-[#3e0707] text-white">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12">
         {/* MAIN FOOTER */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">

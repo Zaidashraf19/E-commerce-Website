@@ -10,9 +10,9 @@ import CartDialogComponent from "../CartDialog/App.jsx";
 import Logo from "../../assets/logo.png";
 import { useSelector } from "react-redux";
 
-const Navbar = ({ Username, Password }) => {
-  console.log("USERNAME:", Username);
-  console.log("PASSWORD:", Password);
+const Navbar = () => {
+  const Username = localStorage.getItem("Username");
+  const Password = localStorage.getItem("Password");
 
   const { wishlistItems } = useSelector((state) => state.wishlist);
   const { totalQuantity } = useSelector((s) => s.cart);
@@ -87,10 +87,10 @@ const Navbar = ({ Username, Password }) => {
             {/* DASHBOARD - ADMIN ONLY */}
             {Username === "admin@gmail.com" || Password === "admin123" ? (
               <Link
-                to="/admin"
+                to="/dashboard"
                 className="text-gray-700 font-medium hover:text-[#4a0a0a] transition-colors duration-200"
               >
-                Admin
+                ADMIN
               </Link>
             ) : null}
           </div>
@@ -187,11 +187,11 @@ const Navbar = ({ Username, Password }) => {
               {/* ADMIN DASHBOARD */}
               {Username === "admin@gmail.com" || Password === "admin123" ? (
                 <Link
-                  to="/admin"
+                  to="/dashboard"
                   onClick={() => setMenuOpen(false)}
                   className="px-4 py-3 rounded-lg text-gray-700 font-medium hover:bg-blue-50 hover:text-[#4a0a0a] active:bg-blue-100 transition-all duration-200"
                 >
-                  DASHBOARD
+                  ADMIN
                 </Link>
               ) : null}
             </div>

@@ -34,7 +34,10 @@ const CartDialogComponent = ({ open, onClose }) => {
                     <div className="flex justify-end">
                       <button
                         className="text-red-600 text-4xl"
-                        onClick={() => dispatch(removeFromCart(item?._id))}
+                        onClick={() => {
+                          dispatch(removeFromCart(item?._id));
+                          toast.success("Item removed from cart!");
+                        }}
                       >
                         &times;
                       </button>
@@ -43,13 +46,9 @@ const CartDialogComponent = ({ open, onClose }) => {
                       <p>{item?.name}</p>
                       <p>{item?.quantity}</p>
                       {item?.discountedPrice === 0 ? (
-                        <>
-                          <p>{item?.price * item?.quantity}</p>
-                        </>
+                        <p>{item?.price * item?.quantity}</p>
                       ) : (
-                        <>
-                          <p>{item?.discountedPrice * item?.quantity}</p>
-                        </>
+                        <p>{item?.discountedPrice * item?.quantity}</p>
                       )}
                     </div>
                     <br />
@@ -60,7 +59,9 @@ const CartDialogComponent = ({ open, onClose }) => {
           </>
         )}
         <DialogActions className="flex justify-around">
-          <Button onClick={onClose}>Continue Shopping</Button>
+          <Button onClick={onClose}>
+            <Link to="/products">Continue Shopping</Link>
+          </Button>
           <Button onClick={onClose}>
             <Link to="/cart">Go to cart</Link>
           </Button>

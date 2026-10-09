@@ -12,23 +12,21 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // if (!passVal || !nameVal) {
-    //   return;
-    // }
+    if (!passVal || !nameVal) {
+      setTimeout(() => {
+        toast.error("PLEASE ENTER BOTH EMAIL AND PASSWORD");
+      }, 500);
+      return;
+    }
 
     localStorage.setItem("Username", nameVal);
     localStorage.setItem("Password", passVal);
-    // Navigate("/");
     setNameVal("");
     setPassVal("");
-    // window.location.reload();
-
-    toast.success(
-      <>
-        <strong>USER LOGGED IN</strong>
-        <br />
-      </>,
-    );
+    toast.success("USER LOGGED IN");
+    setTimeout(() => {
+      Navigate("/");
+    }, 2800);
   };
 
   return (

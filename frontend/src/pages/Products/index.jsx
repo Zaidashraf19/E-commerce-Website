@@ -18,6 +18,10 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import EditIcon from "@mui/icons-material/Edit";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const Products = () => {
   const Navigate = useNavigate();
@@ -68,20 +72,10 @@ const Products = () => {
 
     if (exists) {
       dispatch(removeFromWishlist(id));
-      toast.success(
-        <>
-          <strong>REMOVED FROM Wishlist</strong>
-          <br />
-        </>,
-      );
+      toast.success("REMOVED FROM Wishlist");
     } else {
       dispatch(addToWishlist(item));
-      toast.success(
-        <>
-          <strong>ADDED TO Wishlist</strong>
-          <br />
-        </>,
-      );
+      toast.success("ADDED TO Wishlist");
     }
   };
 
@@ -95,12 +89,7 @@ const Products = () => {
         quantity,
       }),
     );
-    toast.success(
-      <>
-        <strong>Added To Cart</strong>
-        <br />
-      </>,
-    );
+    toast.success("Added To Cart");
   };
 
   // DELETE PRODUCT
@@ -122,19 +111,31 @@ const Products = () => {
           finest ingredients to capture your unique essence.
         </p>
       </div>
+
       {/* Category filter */}
       <div className="flex justify-start m-5">
-        <select
-          className="border p-2 rounded"
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-        >
-          <option value="All">All Categories</option>
-          <option value="men">Men</option>
-          <option value="women">Women</option>
-          <option value="unisex">Unisex</option>
-        </select>
+        <div>
+          <FormControl sx={{ m: 1, minWidth: 80 }}>
+            <InputLabel id="demo-simple-select-autowidth-label">
+              Category
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-autowidth-label"
+              id="demo-simple-select-autowidth"
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              autoWidth
+              label="Age"
+            >
+              <MenuItem value="All">All Category</MenuItem>
+              <MenuItem value="men">Men</MenuItem>
+              <MenuItem value="women">Women</MenuItem>
+              <MenuItem value="unisex">Unisex</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
       </div>
+
       {/* Product list */}
       <div className="flex justify-center flex-wrap gap-5 my-5">
         {filteredProducts?.map((item) => {
@@ -250,6 +251,7 @@ const Products = () => {
           );
         })}
       </div>
+
       <ToastContainer
         position="top-right"
         autoClose={2000}
