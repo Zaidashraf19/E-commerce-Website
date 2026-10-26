@@ -23,4 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
-.Base_URL.js
+Base_URL.js
