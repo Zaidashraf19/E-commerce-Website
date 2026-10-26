@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import Base_URL from "../Base_URL.js";
 import { clearCart } from "../../redux/GeneralSlice.js";
+import { toast, ToastContainer } from "react-toastify";
 
 const CheckOut = () => {
   const { cartItems, totalPrice, totalQuantity } = useSelector((s) => s.cart);
@@ -39,18 +40,22 @@ const CheckOut = () => {
       .then((response) => {
         console.log(response.data);
         dispatch(clearCart());
+        toast.success("ORDER PLACED, THAKYOU OUR TEAM WILL REACHOUT");
       })
       .catch((error) => {
         console.error(error?.response);
       });
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      address: "",
-      contact: "",
-      notes: "",
-    });
+    toast.error("KINDLY FILLOUT ALL THE REQUIRED DETAILS");
+    setTimeout(() => {
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        address: "",
+        contact: "",
+        notes: "",
+      });
+    }, 500);
   };
 
   return (
@@ -181,6 +186,14 @@ const CheckOut = () => {
           </button>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover={false}
+      />
     </>
   );
 };

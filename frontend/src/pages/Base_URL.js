@@ -1,3 +1,3 @@
-const Base_URL = "http://192.168.100.50:3000";
+const Base_URL = "https://e-commerce-website-backend-pi.vercel.app";
 
 export default Base_URL;

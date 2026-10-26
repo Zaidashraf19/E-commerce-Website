@@ -12,6 +12,7 @@ import Base_URL from "../Base_URL.js";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { toast, ToastContainer } from "react-toastify";
 
 const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1);
@@ -46,7 +47,7 @@ const SingleProduct = () => {
         quantity,
       }),
     );
-    Swal.fire({ title: "Added To Cart", icon: "success", draggable: false });
+    toast.success("Added To Cart");
   };
 
   const toggleDropdown = (name) => {
@@ -408,6 +409,15 @@ const SingleProduct = () => {
           )}
         </div>
       </div>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnHover={false}
+      />
     </>
   );
 };

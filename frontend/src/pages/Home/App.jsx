@@ -326,74 +326,6 @@ const App = () => {
               ))}
             </div>
           </div>
-
-          <div className="w-full px-4 sm:px-6 lg:px-8 py-10">
-            <div className="max-w-6xl mx-auto">
-              {/* Heading */}
-              {/* <div className="text-center mb-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#4a0a0a]">
-                  EXPERIENCE THE FRAGRANCE
-                </h2>
-
-                <p className="text-gray-600 mt-2">
-                  Discover the essence of luxury through our signature
-                  collection.
-                </p>
-              </div> */}
-
-              {/* Video */}
-              <div className="w-full px-4 sm:px-6 lg:px-8 py-10">
-                {/* HEADING */}
-                {/* <div className="text-center mb-8">
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#4a0a0a]">
-                    CUSTOMER FEEDBACK
-                  </h2>
-
-                  <p className="text-gray-600 mt-2">
-                    See what our customers have to say about our fragrances.
-                  </p>
-                </div> */}
-
-                {/* VIDEOS */}
-                <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {feedbackVideos?.map((item, index) => (
-                    <div
-                      key={index}
-                      className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-300"
-                    >
-                      {/* VIDEO */}
-                      <div className="relative">
-                        <video
-                          src={item?.video}
-                          className="w-full h-[400px] object-cover"
-                          controls
-                          muted
-                          loop
-                          playsInline
-                        />
-                      </div>
-
-                      {/* CUSTOMER INFO */}
-                      <div className="p-5 text-center">
-                        <h3 className="text-xl font-bold text-[#4a0a0a]">
-                          {item.title}
-                        </h3>
-
-                        <p className="text-gray-600 mt-2 leading-6">
-                          {item.text}
-                        </p>
-
-                        {/* STARS */}
-                        <div className="text-yellow-400 text-2xl mt-3">
-                          ★★★★★
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* VIEW PRODUCTS CTA */}
@@ -429,3 +361,70 @@ const App = () => {
 };
 
 export default App;
+
+// <div className="w-full px-4 sm:px-6 lg:px-8 py-10">
+//   <div className="max-w-6xl mx-auto">
+//     {/* Heading */}
+//     {/* <div className="text-center mb-6">
+//       <h2 className="text-3xl md:text-4xl font-bold text-[#4a0a0a]">
+//         EXPERIENCE THE FRAGRANCE
+//       </h2>
+
+//       <p className="text-gray-600 mt-2">
+//         Discover the essence of luxury through our signature
+//         collection.
+//       </p>
+//     </div> */}
+
+//     {/* Video */}
+//     <div className="w-full px-4 sm:px-6 lg:px-8 py-10">
+//       {/* HEADING */}
+//       {/* <div className="text-center mb-8">
+//         <h2 className="text-3xl md:text-4xl font-bold text-[#4a0a0a]">
+//           CUSTOMER FEEDBACK
+//         </h2>
+
+//         <p className="text-gray-600 mt-2">
+//           See what our customers have to say about our fragrances.
+//         </p>
+//       </div> */}
+//     </div>
+//   </div>
+// </div>
+// {/* VIDEOS */}
+// <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//   {feedbackVideos?.map((item, index) => (
+//     <div
+//       key={index}
+//       className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-300"
+//     >
+//       {/* VIDEO */}
+//       <div className="relative">
+//         <video
+//           src={item?.video}
+//           className="w-full h-[400px] object-cover"
+//           controls
+//           muted
+//           loop
+//           playsInline
+//         />
+//       </div>
+
+//       {/* CUSTOMER INFO */}
+//       <div className="p-5 text-center">
+//         <h3 className="text-xl font-bold text-[#4a0a0a]">
+//           {item.title}
+//         </h3>
+
+//         <p className="text-gray-600 mt-2 leading-6">
+//           {item.text}
+//         </p>
+
+//         {/* STARS */}
+//         <div className="text-yellow-400 text-2xl mt-3">
+//           ★★★★★
+//         </div>
+//       </div>
+//     </div>
+//   ))}
+// </div>
